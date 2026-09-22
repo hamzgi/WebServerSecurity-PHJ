@@ -25,6 +25,12 @@ export default function Home() {
 
         <div className="flex flex-col gap-2 text-sm">
           <Link
+            href="/notices"
+            className="font-medium text-zinc-950 underline underline-offset-4 dark:text-zinc-50"
+          >
+            /notices — 공지사항 게시판 →
+          </Link>
+          <Link
             href="/about"
             className="font-medium text-zinc-950 underline underline-offset-4 dark:text-zinc-50"
           >

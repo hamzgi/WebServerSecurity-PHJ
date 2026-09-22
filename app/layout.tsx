@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "웹서버보안프로그래밍 — 4주차 템플릿",
-  description: "Next.js 16 App Router 템플릿 프로젝트 (4주차 실습)",
+  title: "웹서버보안프로그래밍 — 공지사항 게시판",
+  description: "Next.js 16 App Router 실습 — 공지사항 게시판",
 };
 
 // app/layout.tsx는 모든 페이지를 감싸는 "루트 레이아웃"입니다.
@@ -33,7 +34,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="ko"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SiteHeader />
+        {children}
+      </body>
     </html>
   );
 }
